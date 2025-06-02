@@ -49,22 +49,6 @@ export class PersonsComponent implements OnInit {
       key: 'status',
       label: 'status',
     },
-    {
-      key: 'status',
-      label: 'status',
-    },
-    {
-      key: 'status',
-      label: 'status',
-    },
-    {
-      key: 'status',
-      label: 'status',
-    },
-    {
-      key: 'status',
-      label: 'status',
-    },
   ];
 
   modalHeader = [

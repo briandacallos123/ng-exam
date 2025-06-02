@@ -1,5 +1,5 @@
 table {
-  width: 100%;
+  min-width: 800px;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
   text-transform: capitalize;
@@ -10,17 +10,15 @@ table {
   overflow: auto;
   /* background-color: red; */
   border-collapse: collapse;
-  width: 1000px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   display: block; /* important for scrollable container */
 }
 .main-table {
   overflow-y: scroll;
   /* height: 300px; */
 }
-.main-table tr td {
-  width: 400px;
-}
+
 tr {
   height: 50px;
 }
@@ -30,7 +28,7 @@ thead th {
   top: 0;
   background-color: #4caf50;
   color: white;
-  /* z-index: 2; */
+  z-index: 99999;
 }
 
 th,
@@ -40,7 +38,7 @@ td {
 }
 
 tr:hover {
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
 }
 
 .control-td {
@@ -54,7 +52,6 @@ tr:hover {
 .contr-th-parent .control-th {
   position: sticky;
   left: 0;
-  /* z-index: 55555; */
   background-color: #4caf50;
   text-align: center;
 }
@@ -79,17 +76,16 @@ th {
   padding: 5px;
 }
 .sub-table-container {
-  /* max-height: 0;
-  transition: max-height 0.3s ease;
-  overflow: hidden; */
   overflow: hidden;
   max-height: 0;
   padding: 0 50px;
   transition: max-height 0.3s ease;
 }
 
-.sub-thead th {
+.sub-thead th,
+.sub-thead td {
   background-color: rgb(100, 98, 98);
+  z-index: -9999;
 }
 
 .sub-table-open {
@@ -97,8 +93,7 @@ th {
   padding: 10px 50px;
 }
 
-.test-sticky {
+.thead-sticky {
   position: static;
   top: 0;
-  /* z-index: 99999; */
 }

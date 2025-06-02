@@ -5,11 +5,15 @@
   />
   <br /><br />
 
-  <app-table
-    [header]="personTableHeader"
-    [isLoading]="isLoading"
-    [controlled]="true"
-    [rowData]="personList"
-    [subHeader]="modalHeader"
-  />
+  <div class="main-content">
+    <div class="table">
+      <app-table
+        [header]="personTableHeader"
+        [isLoading]="isLoading"
+        [controlled]="true"
+        [rowData]="personList"
+        [subHeader]="modalHeader"
+      />
+    </div>
+  </div>
 </div>

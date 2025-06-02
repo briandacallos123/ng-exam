@@ -2,90 +2,145 @@
   "persons": [
     {
       "id": 1,
-      "name": "brian dacallos",
+      "name": "Alex Ramos",
+      "gender": "male",
+      "status": "active",
       "team": "green team",
-      "salary": "50,000",
+      "salary": "55,000",
       "hobbies": [
         {
-          "title": "basketball",
+          "title": "cycling",
           "schedule": "MWF",
-          "monthlyBudget": "1000"
+          "monthlyBudget": "1200"
         },
         {
-          "title": "tennis",
-          "schedule": "tth",
-          "monthlyBudget": "1000"
+          "title": "reading",
+          "schedule": "weekends",
+          "monthlyBudget": "500"
         }
       ]
     },
     {
       "id": 2,
-      "name": "cesar dacallos",
+      "name": "Bea Cruz",
+      "gender": "female",
+      "status": "on leave",
       "team": "blue team",
-      "salary": "1,000",
+      "salary": "40,000",
       "hobbies": [
         {
-          "title": "soccer",
-          "schedule": "MWF",
-          "monthlyBudget": "1000"
-        },
-        {
-          "title": "video games",
+          "title": "painting",
           "schedule": "tth",
-          "monthlyBudget": "1000"
-        },
-        {
-          "title": "football",
-          "schedule": "MWF",
-          "monthlyBudget": "1000"
+          "monthlyBudget": "800"
         }
       ]
     },
     {
       "id": 3,
-      "name": "mercy dacallos",
+      "name": "Carlos Reyes",
+      "gender": "male",
+      "status": "inactive",
       "team": "red team",
-      "salary": "20,000",
+      "salary": "60,000",
       "hobbies": []
     },
     {
       "id": 4,
-      "name": "cj dacallos",
-      "team": "red team",
-      "salary": "20,000",
+      "name": "Diana Santos",
+      "gender": "female",
+      "status": "active",
+      "team": "green team",
+      "salary": "50,000",
       "hobbies": [
         {
-          "title": "jock n poy",
+          "title": "yoga",
+          "schedule": "MWF",
+          "monthlyBudget": "700"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ethan Cruz",
+      "gender": "male",
+      "status": "active",
+      "team": "yellow team",
+      "salary": "30,000",
+      "hobbies": [
+        {
+          "title": "gaming",
+          "schedule": "weekends",
+          "monthlyBudget": "1500"
+        },
+        {
+          "title": "swimming",
+          "schedule": "tth",
+          "monthlyBudget": "900"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Faith Navarro",
+      "gender": "female",
+      "status": "inactive",
+      "team": "blue team",
+      "salary": "45,000",
+      "hobbies": []
+    },
+    {
+      "id": 7,
+      "name": "Gabe Morales",
+      "gender": "male",
+      "status": "on leave",
+      "team": "green team",
+      "salary": "38,000",
+      "hobbies": [
+        {
+          "title": "basketball",
           "schedule": "MWF",
           "monthlyBudget": "1000"
         }
       ]
     },
     {
-      "id": 4,
-      "name": "cj dacallos",
+      "id": 8,
+      "name": "Hannah Lopez",
+      "gender": "female",
+      "status": "active",
       "team": "red team",
-      "salary": "20,000",
+      "salary": "70,000",
       "hobbies": [
         {
-          "title": "jock n poy",
-          "schedule": "MWF",
-          "monthlyBudget": "1000"
+          "title": "tennis",
+          "schedule": "tth",
+          "monthlyBudget": "1100"
         }
       ]
     },
     {
-      "id": 4,
-      "name": "cj dacallos",
-      "team": "red team",
-      "salary": "20,000",
+      "id": 9,
+      "name": "Ivan Torres",
+      "gender": "male",
+      "status": "inactive",
+      "team": "yellow team",
+      "salary": "65,000",
       "hobbies": [
         {
-          "title": "jock n poy",
+          "title": "football",
           "schedule": "MWF",
-          "monthlyBudget": "1000"
+          "monthlyBudget": "1300"
         }
       ]
+    },
+    {
+      "id": 10,
+      "name": "Julia Mendoza",
+      "gender": "female",
+      "status": "active",
+      "team": "blue team",
+      "salary": "52,000",
+      "hobbies": []
     }
   ]
 }
