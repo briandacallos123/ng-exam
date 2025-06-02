@@ -1,0 +1,13 @@
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.body-content {
+  padding: 20px 0px;
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+}

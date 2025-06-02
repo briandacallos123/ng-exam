@@ -1,0 +1,91 @@
+{
+  "persons": [
+    {
+      "id": 1,
+      "name": "brian dacallos",
+      "team": "green team",
+      "salary": "50,000",
+      "hobbies": [
+        {
+          "title": "basketball",
+          "schedule": "MWF",
+          "monthlyBudget": "1000"
+        },
+        {
+          "title": "tennis",
+          "schedule": "tth",
+          "monthlyBudget": "1000"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "cesar dacallos",
+      "team": "blue team",
+      "salary": "1,000",
+      "hobbies": [
+        {
+          "title": "soccer",
+          "schedule": "MWF",
+          "monthlyBudget": "1000"
+        },
+        {
+          "title": "video games",
+          "schedule": "tth",
+          "monthlyBudget": "1000"
+        },
+        {
+          "title": "football",
+          "schedule": "MWF",
+          "monthlyBudget": "1000"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "mercy dacallos",
+      "team": "red team",
+      "salary": "20,000",
+      "hobbies": []
+    },
+    {
+      "id": 4,
+      "name": "cj dacallos",
+      "team": "red team",
+      "salary": "20,000",
+      "hobbies": [
+        {
+          "title": "jock n poy",
+          "schedule": "MWF",
+          "monthlyBudget": "1000"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "cj dacallos",
+      "team": "red team",
+      "salary": "20,000",
+      "hobbies": [
+        {
+          "title": "jock n poy",
+          "schedule": "MWF",
+          "monthlyBudget": "1000"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "cj dacallos",
+      "team": "red team",
+      "salary": "20,000",
+      "hobbies": [
+        {
+          "title": "jock n poy",
+          "schedule": "MWF",
+          "monthlyBudget": "1000"
+        }
+      ]
+    }
+  ]
+}

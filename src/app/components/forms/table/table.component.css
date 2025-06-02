@@ -1,0 +1,104 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  text-transform: capitalize;
+  /* background-color: orange; */
+}
+.table-container {
+  /* or any desired value */
+  overflow: auto;
+  /* background-color: red; */
+  border-collapse: collapse;
+  width: 1000px;
+  height: 300px;
+  display: block; /* important for scrollable container */
+}
+.main-table {
+  overflow-y: scroll;
+  /* height: 300px; */
+}
+.main-table tr td {
+  width: 400px;
+}
+tr {
+  height: 50px;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #4caf50;
+  color: white;
+  /* z-index: 2; */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+.control-td {
+  text-align: center;
+  position: sticky;
+  left: 0;
+  background-color: white;
+  /* z-index: 55555; */
+}
+
+.contr-th-parent .control-th {
+  position: sticky;
+  left: 0;
+  /* z-index: 55555; */
+  background-color: #4caf50;
+  text-align: center;
+}
+
+i {
+  cursor: pointer;
+}
+.tr-sub-container {
+  position: relative;
+  /* background-color: red; */
+  width: 100%;
+}
+
+.tr-sub-container,
+td,
+th {
+  padding: 0 10px;
+  margin: 0;
+  height: 0;
+}
+.sub-tbody tr td {
+  padding: 5px;
+}
+.sub-table-container {
+  /* max-height: 0;
+  transition: max-height 0.3s ease;
+  overflow: hidden; */
+  overflow: hidden;
+  max-height: 0;
+  padding: 0 50px;
+  transition: max-height 0.3s ease;
+}
+
+.sub-thead th {
+  background-color: rgb(100, 98, 98);
+}
+
+.sub-table-open {
+  max-height: 500px;
+  padding: 10px 50px;
+}
+
+.test-sticky {
+  position: static;
+  top: 0;
+  /* z-index: 99999; */
+}

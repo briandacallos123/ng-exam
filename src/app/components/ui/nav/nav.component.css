@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+  border-bottom: 1px solid rgb(216, 210, 210);
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li:not(:last-child) {
+  margin-right: 40px;
+}
+nav ul li a:hover {
+  color: blue !important;
+  text-decoration: underline;
+}
+nav ul li a {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.header-lead {
+  font-weight: 600;
+  font-size: 24px;
+}

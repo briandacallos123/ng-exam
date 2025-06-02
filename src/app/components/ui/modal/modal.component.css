@@ -1,0 +1,30 @@
+/* .modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(99, 99, 99, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.modal-content {
+  width: 60%;
+  left: 25%;
+  min-height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 auto;
+  /* 
+  z-index: 99999;
+  /* transform: translateX(50%, -50); */
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}

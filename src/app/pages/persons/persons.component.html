@@ -1,0 +1,15 @@
+<div class="container">
+  <app-search
+    (onSearch)="fetchByName($event)"
+    (result)="fetchedPersons($event)"
+  />
+  <br /><br />
+
+  <app-table
+    [header]="personTableHeader"
+    [isLoading]="isLoading"
+    [controlled]="true"
+    [rowData]="personList"
+    [subHeader]="modalHeader"
+  />
+</div>

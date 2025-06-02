@@ -1,0 +1,70 @@
+<div class="table-container">
+  <table class="main-table">
+    <thead>
+      <tr class="contr-th-parent">
+        @if(controlled){
+        <th class="control-th test-sticky">wew</th>
+        } @for (header of header; track $index) {
+        <th class="test-sticky">
+          {{ header.label }}
+        </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @if(!isLoading){ @for (row of rowData; track $index) {
+      <tr>
+        @if(controlled){
+        <td class="control-td">
+          <i
+            (click)="toggleControl(row)"
+            [class]="{
+              'fa-solid': true,
+              'fa-plus': isCollapsed(row),
+              'fa-minus': !isCollapsed(row)
+            }"
+          ></i>
+        </td>
+        } @for (header of header; track $index) {
+        <td>
+          {{ row[header.key] }}
+        </td>
+        }
+      </tr>
+
+      <!-- this is sub table beneath every tr -->
+      <!-- will show if user click row. -->
+      <tr class="tr-sub-container">
+        <td [attr.colspan]="header.length + 1">
+          <div
+            class="sub-table-container"
+            [class.sub-table-open]="isShowSubTable(row)"
+          >
+            <table>
+              <thead class="sub-thead">
+                <tr>
+                  @for (subHeader of subHeader; track $index) {
+                  <th>
+                    {{ subHeader?.label }}
+                  </th>
+                  }
+                </tr>
+              </thead>
+              <tbody class="sub-tbody">
+                <tr>
+                  <td>Brian</td>
+                  <td>myEmail.com</td>
+                  <td>1000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      } }@else {
+      <h4>Loading...</h4>
+      }
+    </tbody>
+  </table>
+</div>
+<br />
