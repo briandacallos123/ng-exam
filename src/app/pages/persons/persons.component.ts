@@ -51,7 +51,7 @@ export class PersonsComponent implements OnInit {
     },
   ];
 
-  modalHeader = [
+  subHeader = [
     {
       key: 'title',
       label: 'hobbies',
@@ -65,6 +65,9 @@ export class PersonsComponent implements OnInit {
       label: 'Monthly Budget',
     },
   ];
+
+  subRow = [];
+  subRowKey = 'hobbies';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -88,7 +91,7 @@ export class PersonsComponent implements OnInit {
         });
 
       this.destroyRef.onDestroy(() => response.unsubscribe());
-    }, 2000);
+    });
   }
 
   getHobbies(id: number): personType[] {
@@ -97,15 +100,21 @@ export class PersonsComponent implements OnInit {
       ?.map((user: personType) => user.hobbies);
   }
 
-  fetchedPersons(res: any) {
+  getPerson(person: personType) {
+    this.subRow = this.personList?.find(
+      (item: personType) => Number(item.id) === Number(person?.id)
+    )?.hobbies;
+  }
+
+  getPersons(res: any) {
     this.personList = res?.filter((item: any) => {
-      if (item.name.includes(this.toSearch.toLowerCase())) {
+      if (item.name.toLowerCase().includes(this.toSearch.toLowerCase())) {
         return item;
       }
     });
   }
 
-  fetchByName(res: any) {
+  getByName(res: any) {
     this.toSearch = res;
   }
 }

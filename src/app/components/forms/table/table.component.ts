@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   type tableRow,
   type tableHeader,
@@ -12,9 +12,9 @@ import { ModalComponent } from '../../ui/modal/modal.component';
   styleUrl: './table.component.css',
 })
 export class TableComponent {
-  @Input() controlled?: boolean;
+  @Input() isControl?: boolean;
   @Input() isControlOpen?: boolean;
-  rowClicked?: any;
+  rowClickedItem?: any;
 
   @Input() isLoading?: boolean;
 
@@ -26,28 +26,39 @@ export class TableComponent {
   // modalRow?: tableRow[];
 
   @Input() subHeader?: tableHeader[];
+  @Input() subRow?: tableRow[];
+  @Input() subRowKey?: string;
+  @Output() onClickRow = new EventEmitter();
 
   toggleControl(row?: any) {
     this.isControlOpen = !this.isControlOpen;
-    // assign hobbies to modal row temporary
-    // this.modalRow = row?.hobbies;
-    if (this.rowClicked) {
-      if (this.rowClicked.id !== row?.id) {
-        this.rowClicked = null;
-        this.rowClicked = row;
+    if (this.rowClickedItem) {
+      if (this.rowClickedItem.id !== row?.id) {
+        this.rowClickedItem = null;
+        this.rowClickedItem = row;
+        this.clickedRow(row);
       } else {
-        this.rowClicked = null;
+        this.rowClickedItem = null;
       }
     } else {
-      this.rowClicked = row;
+      this.rowClickedItem = row;
+      this.clickedRow(row);
     }
   }
 
-  isCollapsed(row: any): boolean {
-    return row['hobbies']?.length && this.rowClicked?.id !== row['id'];
+  isCollapsed(row: tableRow): boolean {
+    return Number(this.rowClickedItem?.id) !== Number(row['id']);
+  }
+
+  hasSubrow(row: tableRow): boolean {
+    return row[`${this.subRowKey}`]?.length !== 0;
   }
 
   isShowSubTable(row: any): boolean {
-    return row?.id === this.rowClicked?.id;
+    return row?.id === this.rowClickedItem?.id;
+  }
+
+  clickedRow(row: any) {
+    this.onClickRow.emit(row);
   }
 }
