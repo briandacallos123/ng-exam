@@ -2,10 +2,10 @@
   <table class="main-table">
     <thead>
       <tr class="contr-th-parent">
-        @if(controlled){
+        @if(isControl){
         <th class="control-th thead-sticky"></th>
         } @for (header of header; track $index) {
-        <th class="thead-sticky">
+        <th class="">
           {{ header.label }}
         </th>
         }
@@ -14,14 +14,14 @@
     <tbody>
       @if(!isLoading){ @for (row of rowData; track $index) {
       <tr>
-        @if(controlled){
+        @if(isControl){
         <td class="control-td">
           <i
             (click)="toggleControl(row)"
             [class]="{
               'fa-solid': true,
-              'fa-plus': isCollapsed(row),
-              'fa-minus': !isCollapsed(row)
+              'fa-plus': isCollapsed(row) && hasSubrow(row),
+              'fa-minus': !isCollapsed(row) && hasSubrow(row)
             }"
           ></i>
         </td>
@@ -51,11 +51,15 @@
                 </tr>
               </thead>
               <tbody class="sub-tbody">
+                @for (row of subRow; track $index) {
                 <tr>
-                  <td>Brian</td>
-                  <td>myEmail.com</td>
-                  <td>1000</td>
+                  @for (sub of subHeader; track $index) {
+                  <td>
+                    {{ row[sub.key] }}
+                  </td>
+                  }
                 </tr>
+                }
               </tbody>
             </table>
           </div>

@@ -1,8 +1,5 @@
 <div class="container">
-  <app-search
-    (onSearch)="fetchByName($event)"
-    (result)="fetchedPersons($event)"
-  />
+  <app-search (onSearch)="getByName($event)" (result)="getPersons($event)" />
   <br /><br />
 
   <div class="main-content">
@@ -10,9 +7,12 @@
       <app-table
         [header]="personTableHeader"
         [isLoading]="isLoading"
-        [controlled]="true"
+        [isControl]="true"
         [rowData]="personList"
-        [subHeader]="modalHeader"
+        [subHeader]="subHeader"
+        (onClickRow)="getPerson($event)"
+        [subRow]="subRow"
+        [subRowKey]="subRowKey"
       />
     </div>
   </div>
