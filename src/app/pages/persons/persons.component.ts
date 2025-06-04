@@ -12,6 +12,7 @@ import {
   switchMap,
 } from 'rxjs';
 import { SearchComponent } from '../../components/forms/search/search.component';
+import { environment } from '../../../environment';
 
 @Component({
   selector: 'app-persons',
@@ -21,7 +22,7 @@ import { SearchComponent } from '../../components/forms/search/search.component'
 })
 export class PersonsComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
-
+  baseUrl = environment.apiUrl;
   isLoading = false;
 
   personList: any = [];
@@ -75,11 +76,15 @@ export class PersonsComponent implements OnInit {
     this.fetchPersons();
   }
 
+  get personApiUrl(): string {
+    return `${this.baseUrl}/persons`;
+  }
+
   fetchPersons() {
     this.isLoading = true;
     setTimeout(() => {
       const response = this.httpClient
-        .get('http://localhost:3000/persons')
+        .get(this.personApiUrl)
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe({
           next: (resData) => {

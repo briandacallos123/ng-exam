@@ -1,5 +1,9 @@
 <div class="container">
-  <app-search (onSearch)="getByName($event)" (result)="getPersons($event)" />
+  <app-search
+    [urlPath]="personApiUrl"
+    (onSearch)="getByName($event)"
+    (result)="getPersons($event)"
+  />
   <br /><br />
 
   <div class="main-content">
