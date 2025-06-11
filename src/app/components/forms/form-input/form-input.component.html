@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label [for]="name">{{ label }}</label
+  ><br />
+  <input
+    [name]="name"
+    [type]="type"
+    class="form-control"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+  />
+  <div *ngIf="errorMessage" class="err-message">*{{ errorMessage }}</div>
+</div>

@@ -13,10 +13,11 @@ import {
 } from 'rxjs';
 import { SearchComponent } from '../../components/forms/search/search.component';
 import { environment } from '../../../environment';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-persons',
-  imports: [ControlComponent, TableComponent, SearchComponent],
+  imports: [ControlComponent, TableComponent, SearchComponent, RouterLink],
   templateUrl: './persons.component.html',
   styleUrl: './persons.component.css',
 })
