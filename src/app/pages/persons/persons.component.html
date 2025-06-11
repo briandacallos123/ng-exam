@@ -1,10 +1,12 @@
 <div class="container">
-  <app-search
-    [urlPath]="personApiUrl"
-    (onSearch)="getByName($event)"
-    (result)="getPersons($event)"
-  />
-  <br /><br />
+  <div class="search-add">
+    <app-search
+      [urlPath]="personApiUrl"
+      (onSearch)="getByName($event)"
+      (result)="getPersons($event)"
+    />
+    <button class="btn-link" routerLink="/persons/new">Create</button>
+  </div>
 
   <div class="main-content">
     <div class="table">

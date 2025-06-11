@@ -1,0 +1,23 @@
+<h3>form</h3>
+<button (click)="addHobby()">Add Lesson</button>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div formArrayName="hobbies">
+    <div *ngFor="let hobby of hobbies.controls; let i = index">
+      <div [formGroupName]="i">
+        <input
+          type="text"
+          formControlName="title"
+          placeholder="Lesson title"
+        /><br />
+        <div formArrayName="schedule">
+          <label *ngFor="let day of days; let z = index">
+            {{ day }}
+
+            <input type="checkbox" [formControlName]="z" />
+          </label>
+        </div>
+      </div>
+    </div>
+    <input type="submit" />
+  </div>
+</form>
