@@ -1,0 +1,32 @@
+select,
+input[type="text"] {
+  width: 100%;
+}
+.error {
+  background-color: red;
+}
+label {
+  text-transform: capitalize;
+}
+.hobby-container {
+  margin-bottom: 1rem;
+}
+.btn-create {
+  float: right;
+  margin-bottom: 1rem;
+}
+.btn-remove {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sched-error-message {
+  color: red;
+  font-size: 14px;
+}

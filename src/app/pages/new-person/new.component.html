@@ -1,0 +1,187 @@
+<h1>Register New Person</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <app-form-input
+      label="name"
+      name="name"
+      formControlName="name"
+      [errorMessage]="getErrorMessage('name')"
+    />
+  </div>
+  <div>
+    <app-form-input
+      label="age"
+      name="age"
+      formControlName="age"
+      [errorMessage]="getErrorMessage('age')"
+    />
+  </div>
+  <div>
+    <app-form-select
+      formControlName="gender"
+      label="Gender"
+      [options]="['male', 'female']"
+      [errorMessage]="getErrorMessage('gender')"
+    ></app-form-select>
+  </div>
+  <div>
+    <app-form-input
+      label="Guardian Name"
+      name="guardianName"
+      formControlName="guardianName"
+      [errorMessage]="getErrorMessage('guardianName')"
+    />
+  </div>
+  <div formGroupName="userNames">
+    <div>
+      <p *ngIf="isLoading">loadinggg</p>
+      <app-form-input
+        label="Username"
+        name="userName"
+        formControlName="username"
+        [errorMessage]="getErrorMessage('userNames.username')"
+      />
+    </div>
+
+    <div>
+      <app-form-input
+        label="Confirm Username"
+        name="confirmUsername"
+        formControlName="confirmUsername"
+        [errorMessage]="getErrorMessage('userNames')"
+      />
+    </div>
+  </div>
+  <fieldset formGroupName="presentAddress">
+    <legend>Present Address</legend>
+
+    <div>
+      <label for="islandGroup">Island Group</label><br />
+      <select name="islandGroup" id="" formControlName="islandGroup">
+        <option
+          *ngFor="let island of presentAddress.islandGroup"
+          [value]="island"
+        >
+          {{ island }}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label for="regions">Regions</label><br />
+      <select name="regions" id="" formControlName="region">
+        <option
+          *ngFor="let island of presentAddress?.regions"
+          [value]="island.name"
+        >
+          {{ island.name }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="city">City</label><br />
+      <select name="city" id="" formControlName="city">
+        <option *ngFor="let island of presentAddress?.city" [value]="island">
+          {{ island }}
+        </option>
+      </select>
+    </div>
+  </fieldset>
+
+  <div>
+    <input
+      name="isPermenent"
+      type="checkbox"
+      formControlName="isPermanentAddOpen"
+    />
+    <label for="isPermenent"></label>Open Permanent Address<br />
+  </div>
+
+  <fieldset *ngIf="isPermanentOpen" formGroupName="permanentAddress">
+    <legend>Permanent Address</legend>
+
+    <div>
+      <label for="islandGroup">Island Group</label><br />
+      <select name="islandGroup" id="" formControlName="islandGroup">
+        <option
+          *ngFor="let island of permanentAddress.islandGroup"
+          [value]="island"
+        >
+          {{ island }}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label for="regions">Regions</label><br />
+      <select name="regions" id="" formControlName="region">
+        <option
+          *ngFor="let island of permanentAddress?.regions"
+          [value]="island.name"
+        >
+          {{ island.name }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="city">City</label><br />
+      <select name="city" id="" formControlName="city">
+        <option *ngFor="let island of permanentAddress?.city" [value]="island">
+          {{ island }}
+        </option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Hobbies</legend>
+    <button type="button" (click)="addNewHobby()" class="btn-create">
+      New Hobby
+    </button>
+
+    <div formArrayName="hobbies">
+      <div
+        *ngFor="let hobby of getHobbies.controls; let i = index"
+        [formGroupName]="i"
+        class="hobby-container"
+      >
+        <app-form-input label="name" name="name" formControlName="name" />
+        <br />
+        <div class="schedule-header">
+          <p>Schedule</p>
+          <div>
+            <input
+              formControlName="isEveryday"
+              (change)="onCheckEveryday($event, i)"
+              type="checkbox"
+            />
+            <span>Everyday</span>
+          </div>
+        </div>
+        <!-- Checkbox group for schedule -->
+        <div formArrayName="schedule">
+          <label *ngFor="let day of days; let z = index">
+            <input type="checkbox" [formControlName]="z" />
+
+            {{ day }}
+          </label>
+          <p class="sched-error-message" *ngIf="getSchedulError(i)">
+            *Please select atleast one
+          </p>
+        </div>
+        <br />
+        <app-form-input label="budget" name="budget" formControlName="budget" />
+
+        <div class="btn-remove">
+          <button (click)="onRemoveHobby(i)">Remove Hobby</button>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </fieldset>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
